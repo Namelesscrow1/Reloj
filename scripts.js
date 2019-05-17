@@ -29,3 +29,29 @@ function checkTime(i) {
     }
     return i;
 }
+function CambioDeColor() {
+
+    d = new Date();
+    hr = d.getHours();
+    min = d.getMinutes();
+    sec = d.getSeconds();
+
+    if(hr <= 9) hr = '0'+hr;
+    if(min <= 9) min = '0'+min;
+    if(sec <= 9) sec = '0'+sec;
+
+    var color = "#"+hr+min+sec;
+
+    var propiedades = document.getElementById("clock");
+
+    propiedades.style.color = color;
+
+   //document.body.style.color = green;
+
+    document.getElementById("clock").innerHTML = color;
+
+    setTimeout(CambioDeColor, 1000);
+
+}
+
+CambioDeColor();
